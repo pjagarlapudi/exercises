@@ -28,9 +28,12 @@ public class Sorting {
 		int rightVal = arr[rightPos]; // right-most to start with
 		int leftVal = arr[leftPos];
 
+		int passes = 0;
+		
 		while (leftPos >= 0 && rightPos >= 1) {
 			//System.out.println("leftpos " + leftPos + " rightPOs " + rightPos);
 			// System.out.println("leftVal "+leftVal+ " rightVal "+rightVal);
+			passes++; //counting number of comparisons
 			if (leftVal > rightVal) {
 				swap(arr, leftPos, rightPos);
 			}
@@ -48,6 +51,7 @@ public class Sorting {
 			leftVal = arr[leftPos];
 		}
 
+		System.out.println(passes);
 		return arr;
 	}
 
